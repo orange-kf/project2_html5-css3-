@@ -1,40 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital@0;1&display=swap');
-@fontSize: 16px;
+@fontSize: 1em;
 @color: #666564;
 @darkColor: #454443;
 @redColor: #d25b38;
 @lightColor: #f4f2f2;
 @whiteColor: #ffffff;
-@h1FontSize: @fontSize*5.96;
-@h2FontSize: @fontSize*5.43;
-@h3FontSize: @fontSize*2.46;
-@h4FontSize: @fontSize*1.56;
+@aDarkColor: #95391e;
+@h1FontSize: @fontSize*6;
+@h2FontSize: @fontSize*5.2;
+@h3FontSize: @fontSize*2.5;
+@h4FontSize: @fontSize*1.5;
 @h1SmFontSize: @h1FontSize*.7;
 @h2SmFontSize: @h2FontSize*.7;
 @h3SmFontSize: @h3FontSize*.8;
 @h4SmFontSize: @h4FontSize*.9;
-@smallFontSize: @fontSize*.75;
-@h1Lh: @fontSize*5.5;
-@h2Lh: @fontSize*5;
-@h3Lh: @fontSize*2.3;
-@h4Lh: @fontSize*1.85;
-@h1SmLh: @h1Lh*.7;
-@h2SmLh: @h2Lh*.7;
-@h3SmLh: @h3Lh*.8;
-@h4SmLh: @h4Lh*.9;
+@smallFontSize: @fontSize*.7;
+@h1Lh: @fontSize;
+@h2Lh: @fontSize*.9;
+@h3Lh: @fontSize;
+@h4Lh: @fontSize;
 @Marg0: 0;
 
 /*--lg--*/
-@lgDevice: ~"(max-width: 1200px)";
+@lgDevice: ~"screen and (max-width: 1200px)";
 @lgDeviceMax: 961px;
 /*--md--*/
-@mdDevice: ~"(max-width: 991px)";
+@mdDevice: ~"screen and (max-width: 991px)";
 @mdDeviceMax: 737px;
 /*--sm--*/
-@smDevice: ~"(max-width: 767px)";
+@smDevice: ~"screen and (max-width: 767px)";
 @smDeviceMax: 545px;
 /*--xs--*/
-@xsDevice: ~"(max-width: 575px)";
+@xsDevice: ~"screen and (max-width: 575px)";
 @xsDeviceMax: calc(100% - 30px);
 
 html {
@@ -44,6 +41,10 @@ html {
 	color:@color; 
 	font: normal 16px 'Open Sans', sans-serif; 
 	line-height: 24px;
+	word-wrap: break-word;
+	-ms-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
 }
 
 body.siteGrid {
@@ -52,7 +53,7 @@ body.siteGrid {
 	padding:0;
 	display: grid;
    grid-template-rows: 198px minmax(300px, 1fr) 142px;
-   @media screen and @smDevice {
+   @media @smDevice {
    	grid-template-rows: 135px minmax(300px, 1fr) 142px;
 	}
 }
@@ -75,9 +76,8 @@ h1 {
 	font-size:@h1FontSize; 
 	line-height: @h1Lh; 
 	margin: @Marg0;
-	@media screen and @smDevice {
+	@media @smDevice {
 		font-size: @h1SmFontSize;
-		line-height: @h1SmLh;
   	}
 }
 
@@ -85,9 +85,8 @@ h2 {
 	font-size:@h2FontSize; 
 	line-height: @h2Lh;
 	margin: @Marg0;
-	@media screen and @smDevice {
+	@media @smDevice {
 		font-size: @h2SmFontSize;
-		line-height: @h2SmLh;
   	}
 }
 
@@ -100,9 +99,8 @@ h3 {
 	font-size:@h3FontSize; 
 	line-height: @h3Lh;
 	margin: @Marg0;
-	@media screen and @smDevice {
+	@media @smDevice {
 		font-size: @h3SmFontSize;
-		line-height: @h3SmLh;
   	}
 }
 
@@ -110,9 +108,8 @@ h4 {
 	font-size:@h4FontSize; 
 	line-height: @h4Lh;
 	margin: @Marg0;
-	@media screen and @smDevice {
+	@media @smDevice {
 		font-size: @h4SmFontSize;
-		line-height: @h4SmLh;
   	}
 }
 
@@ -120,20 +117,22 @@ h4 {
 
 a {
 	text-decoration: none;
+	color: @redColor;
 }
 
 a:hover {
 	text-decoration: underline;
+	color: @darkColor;
 }
 
-a:visited {
-	color: @lightColor;
+a:active {
+	color: @aDarkColor;
 }
 
 footer {
 	background: @lightColor;
 	line-height: 142px;
-	@media screen and @xsDevice {
+	@media @xsDevice {
 		font-size: @smallFontSize;
   	}
 }
@@ -164,16 +163,16 @@ ol {
 	width: 1170px;
 	padding: 0 15px;
 	
-	@media screen and @lgDevice {
+	@media @lgDevice {
    	width: @lgDeviceMax;
   	}
-	@media screen and @mdDevice {
+	@media @mdDevice {
    	width: @mdDeviceMax;
   	}
-	@media screen and @smDevice {
+	@media @smDevice {
    	width: @smDeviceMax;
   	}
-	@media screen and @xsDevice {
+	@media @xsDevice {
 		width: @xsDeviceMax;
   	}
 }
@@ -186,6 +185,10 @@ ol {
 
 .textCenter {
 	text-align: center;
+}
+
+.dGrid {
+	display: grid;
 }
 
 .dFlex {
@@ -201,7 +204,7 @@ ol {
 }
 
 .smflexCol {
-	@media screen and @smDevice {
+	@media @smDevice {
    	flex-direction: column;
   	}
 }
@@ -211,23 +214,23 @@ ol {
 }
 
 .flexNoWrap {
-	flex-wrap: no-wrap;
+	flex-wrap: nowrap;
 }
 
 .mdFlexWrap {
-	@media screen and @mdDevice {
+	@media @mdDevice {
    	flex-wrap: wrap;
   	}
 }
 
 .smFlexWrap {
-	@media screen and @smDevice {
+	@media @smDevice {
    	flex-wrap: wrap;
   	}
 }
 
 .xsFlexWrap {
-	@media screen and @xsDevice {
+	@media @xsDevice {
    	flex-wrap: wrap;
   	}
 }
@@ -257,7 +260,7 @@ ol {
 }
 
 .smMr0 {
-	@media screen and @smDevice {
+	@media @smDevice {
    	margin:0;
   	}
 }
@@ -280,7 +283,7 @@ ol {
 
 .secPad {
 	padding: 84px 0;
-	@media screen and @smDevice {
+	@media @smDevice {
    	padding: 84px 0 40px 0;
   	}
 }
@@ -289,24 +292,24 @@ ol {
 .topPageHeader {
 	padding: 57px 0;
 	z-index: 1;
-	@media screen and @mdDevice {
+	@media @mdDevice {
    	padding: 32px 0;
   	}
 }
 
 .siteLogo {
 	float: left;
-	@media screen and @lgDevice {
+	@media @lgDevice {
    	max-width: 250px;
   	}
-	@media screen and @mdDevice {
+	@media @mdDevice {
    	float: none;
    	margin: 0 auto;
   	}
-	@media screen and @smDevice {
+	@media @smDevice {
    	float: left;
 	}
-	@media screen and @xsDevice {
+	@media @xsDevice {
    	max-width: 200px;
 	}
 }
@@ -315,14 +318,14 @@ ol {
 	float: right;
 	position: relative;
 	margin-top: 30px;
-	@media screen and @lgDevice {
+	@media @lgDevice {
 		margin-top: 25px;
 	}
-	@media screen and @mdDevice {
+	@media @mdDevice {
    	float: none;
    	text-align: center;
 	}
-	@media screen and @smDevice {
+	@media @smDevice {
    	float: right;
    	margin-top: 7px;
    	width: 100%;
@@ -334,7 +337,7 @@ ol {
 		margin: 0;
 		li {
 			display: inline-block;
-			@media screen and @smDevice {
+			@media @smDevice {
    			display: block;
    		}
 			a {
@@ -344,10 +347,10 @@ ol {
 				display: block;
 				padding: 14px 17px;
 				position: relative;
-				@media screen and @lgDevice {
+				@media @lgDevice {
    				padding: 10px 12px;
   				}
-				@media screen and @smDevice {
+				@media @smDevice {
   				display: inline-block;
     			padding-left: 0;
     			}
@@ -382,7 +385,7 @@ ol {
 		li:not(:last-child) {
    		margin-bottom: 15px;	
    	}
-		@media screen and @smDevice {
+		@media @smDevice {
 			display: none;
 			background: @redColor;
 		}
@@ -407,7 +410,7 @@ ol {
 		top: 0;
 	}
 	.mainNavBtn {
-		@media screen and @smDevice {
+		@media @smDevice {
    		position: relative;
 		   display: flex;
 		   align-items: center;
@@ -422,12 +425,12 @@ ol {
   		}
 	}
 	.mainNavBtn:hover {
-		@media screen and @smDevice {
+		@media @smDevice {
 			background: #fb5c00;
 		}
 	}
 	.mainNavIcon {
-		@media screen and @smDevice {
+		@media @smDevice {
    		display: block;
 		   position: relative;
 		   width: 36px;
@@ -438,7 +441,7 @@ ol {
 	.mainNavIcon::after,
 	.mainNavIcon::before,
 	.mainNavIcon span {
-		@media screen and @smDevice {
+		@media @smDevice {
 		   content: '';
    		display: block;
    		position: absolute;
@@ -451,12 +454,12 @@ ol {
 		}
 	}
 	.mainNavIcon::before {
-		@media screen and @smDevice {
+		@media @smDevice {
    		top:-14px;
   		}		
 	}
 	.mainNavIcon::after {
-		@media screen and @smDevice {
+		@media @smDevice {
    		top: 14px;
   		}		
 	}
@@ -470,13 +473,13 @@ ol {
 	background: url(../img/aboutBg.jpg) center no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
-	@media screen and @smDevice {
+	@media @smDevice {
 		margin-top: -135px;
 		align-items: flex-start;
 		min-height: 600px;
 		padding-bottom: 50px;
 	}
-	@media screen and @xsDevice {
+	@media @xsDevice {
 		min-height: auto;
 	}
 	h1 {
@@ -486,15 +489,15 @@ ol {
 .bigSlideSecCont {
 	width: 63%;
 	padding-top: 140px;
-	@media screen and @lgDevice {
+	@media @lgDevice {
 		width: 80%;
 	}
-	@media screen and @smDevice {
+	@media @smDevice {
 		width: 100%;
 		padding-top: 200px;
 		text-align: center;
 	}
-	@media screen and @smDevice {
+	@media @smDevice {
 		padding-top: 140px;
 	}
 }
@@ -502,7 +505,7 @@ ol {
 	margin: 50px 0 80px 0;
 	font-style: italic;
 	font-size: 25px;
-	@media screen and @smDevice {
+	@media @smDevice {
 		font-size: 20px;
 		margin: 30px 0 50px 0;
 	}
@@ -510,20 +513,23 @@ ol {
 .bigSlidButtBlock {
 	display: flex;
 	flex-direction: row;
-	@media screen and @smDevice {
+	@media @smDevice {
 		justify-content: center;
 		flex-wrap: wrap;
 	}
 	a:not(:last-child) {
 		margin-right: 25px;
 	}
-	@media screen and @xsDevice {
+	@media @xsDevice {
 		flex-wrap: wrap;
 		flex-direction: column;
 		a:not(:last-child) {
 			margin-right: 0;
 			margin-bottom: 25px;
 		}
+	}
+	.button:hover {
+		color: @lightColor;
 	}
 }
 .button {
@@ -545,9 +551,11 @@ ol {
 .button:hover {
 	text-decoration: none;
 	background: transparent;
+	color: @redColor;
 }
 .button:active {
 	background: @redColor;
+	color: @aDarkColor;
 }
 .button.whiteBorderButton:hover {
 	border: 4px solid @redColor;
@@ -563,21 +571,27 @@ ol {
 	.leftSecBlock {
 		padding: 84px 50px 84px 0;
 		width: 26%;
-		@media screen and @mdDevice {
+		@media @mdDevice {
 			width: 100%;
 			padding-bottom: 20px;
 		}
-		@media screen and @smDevice {
+		@media @smDevice {
 			padding-right: 0;
 		}
-		@media screen and @xsDevice {
+		@media @xsDevice {
 			padding-bottom: 0;
+		}
+		h2 {
+			margin-bottom: 20px;
+		}
+		p:last-child {
+			margin-bottom: 0;
 		}
 	}
 	.rightSecBlock {
 		padding: 84px 0;
 		width: 74%;
-		@media screen and @mdDevice {
+		@media @mdDevice {
 			width: 100%;
 			position: relative;
 			padding-top: 30px;
@@ -593,13 +607,13 @@ ol {
 		height: 100%;
 		top: 0;
 		z-index: -1;
-		@media screen and @lgDevice {
+		@media @lgDevice {
 			width: 330px;
 		}
-		@media screen and @smDevice {
+		@media @smDevice {
 			width: 200px;
 		}
-		@media screen and @xsDevice {
+		@media @xsDevice {
 			display: none;
 		}
 	}
@@ -607,10 +621,10 @@ ol {
 		z-index: 2;
 		padding-left: 50px;
 		width: calc(100% - 50px);
-		@media screen and @smDevice {
+		@media @smDevice {
 			padding-left: 15px;
 		}
-		@media screen and @xsDevice {
+		@media @xsDevice {
 			padding: 0;
 			width: 100%;
 		}
@@ -618,24 +632,22 @@ ol {
 	.oneAboutAgencyText {
 		position: relative;
 		.oneAboutAgencyTitle {
-			width: 280px;
-			padding: 20px 0;
-			border-bottom: 2px solid #ffffff;
+			width: 300px;
+			padding: 11px 0;
 			text-align: right;
 			h3,
 			h4 {
 				color:@whiteColor;
 			}
-			@media screen and @lgDevice {
+			@media @lgDevice {
 				width: 220px;
 			}
-			@media screen and @smDevice {
+			@media @smDevice {
 				width: 150px;
 			}
-			@media screen and @xsDevice {
+			@media @xsDevice {
 				width: 100%;
 				background: @redColor;
-				border-bottom: none;
 				text-align: left;
 				padding-bottom: 30px;
 				padding-left: 20px;
@@ -644,19 +656,20 @@ ol {
 		.oneAboutAgencyDesc {
 			width: calc(100% - 280px);
 			display: flex;
-			align-items: center;
-			padding-left: 56px;
-			@media screen and @lgDevice {
+			align-items: flex-start;
+			padding-left: 37px;
+			@media @lgDevice {
 				width: calc(100% - 220px);
 				padding-left: 45px;
 			}
-			@media screen and @smDevice {
+			@media @smDevice {
 				width: calc(100% - 160px);
 				padding-left: 17px;
 			}
-			@media screen and @xsDevice {
+			@media @xsDevice {
 				width: 100%;
 				padding-left: 20px;
+				padding-right: 20px;
 				position: relative;
 			}
 		}
@@ -670,24 +683,25 @@ ol {
 			box-shadow: 0 0 0 13px rgba(199, 40, 25, .45);
 			display: block;
 			position: absolute;
-			@media screen and @smDevice {
+			top: 5px;
+			@media @smDevice {
 				width: 20px;
 				height: 20px;
 				border-radius: 20px;
 				padding: 10px;
 				box-shadow: 0 0 0 6px rgba(199, 40, 25, .45);
 			}
-			@media screen and @smDevice {
+			@media @xsDevice {
 				top: -20px;
 				margin-left: 0;
 			}
 		}
 		.oneAboutAgencyDescText {
 			padding-left: 100px;
-			@media screen and @smDevice {
+			@media @smDevice {
 				padding-left: 55px;
 			}
-			@media screen and @xsDevice {
+			@media @xsDevice {
 				padding-left: 0;
 				padding-top: 30px;
 			}
@@ -695,25 +709,74 @@ ol {
 		p {margin: 0;}
 	}
 	.oneAboutAgencyText:not(:last-child) {
-		margin-bottom: 40px;
+		margin: 40px 0;
+	}
+	.oneAboutAgencyText:last-child {
+		margin-bottom: 0;
+		.oneAboutAgencyTitle {
+			padding-bottom: 0;
+			@media @xsDevice {
+				padding-bottom: 30px;
+			}
+		}
+	} 
+	.oneAboutAgencyText:first-child {
+		margin-top: 0;
+		.oneAboutAgencyTitle {
+			padding-top: 0;
+			@media @xsDevice {
+				padding-top: 11px;
+			}
+		}
+	}
+	.oneAboutAgencyText:first-child .oneAboutAgencyDesc {
+		align-items: flex-start;
+	}
+	.oneAboutAgencyText::after {
+		content: ''; 
+		width: 280px; 
+		height: 1px; 
+		background: #ffffff; 
+		position: absolute; 
+		bottom: 0;
+		@media @lgDevice {
+			width: 200px;
+		}
+		@media @smDevice {
+			width: 145px;
+		}
+		@media @xsDevice {
+			content: none;
+		}
+	}
+	.oneAboutAgencyText:last-child::after {
+		content: none;
 	}
 }
 
 
 .leftSecBlock {
 	width: 26%;
-	@media screen and @mdDevice {
+	padding-right: 50px;
+	@media @mdDevice {
 		width: 100%;
+		padding-right: 0;
+	}
+	h2 {
+		margin-bottom: -10px;
+		@media @smDevice {
+			margin-bottom: 0;
+		}
 	}
 }
 .rightSecBlock {
 	width: 74%;
-	@media screen and @mdDevice {
+	@media @mdDevice {
 		width: 100%;
 		position: relative;
 		margin-top: 50px;
 	}
-	@media screen and @xsDevice {
+	@media @xsDevice {
 		margin-top: 30px;
 	}
 }
@@ -724,25 +787,28 @@ ol {
 	grid-template-columns: 1fr 1fr 1fr;
    grid-auto-rows: auto;
    grid-gap: 27px;
-   @media screen and @smDevice {
+   @media @smDevice {
 		grid-template-columns: 1fr 1fr;
 	}
-   @media screen and @xsDevice {
+   @media @xsDevice {
 		grid-template-columns: 1fr;
+   	grid-gap: 15px;
 	}
    .oneServ {
    	background: @whiteColor;
    	text-align: center;
+   	display: block;
+   	color: @darkColor;
+   	transition: transform 0.3s ease-out;
    	.oneServCont {
-   		padding: 30px;
+   		padding: 130px 25px 30px 25px;
    		position: relative;
-   		padding-top: 130px;
    	}   	
    	.oneServCont::before {
    		width: 54px;
    		height: 54px;
    		position: absolute;
-   		top: 40px;
+   		top: 45px;
    		left: 0;
    		margin-left: calc(50% - 27px);
    		content: '';
@@ -768,5 +834,497 @@ ol {
    	.achievs3::before {
    		background-image: url(../img/achievs3.png);
    	}
+   	p {
+   		margin-top: 5px;
+   	}
    }
+   .oneServ:hover {
+   	text-decoration: none;
+   	-webkit-transform: scale(1.07);
+ 		-moz-transform: scale(1.07);
+ 		-o-transform: scale(1.07);
+       color: @redColor;
+       @media @xsDevice {
+       	-webkit-transform: none;
+	 		-moz-transform: none;
+	 		-o-transform: none;
+       }
+   }
+}
+
+/*----blogSec----*/
+.blogSecGrid {
+	display: grid;
+	grid-gap: 27px;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(3, 1fr);
+   @media @smDevice {
+   	grid-template-columns: 1fr;
+   	grid-auto-rows: auto;
+   }
+   @media @xsDevice {
+   	grid-gap: 35px;
+   }
+   .oneBlogBlock {
+   	grid-column: ~'1/3';
+   	position: relative;
+   	@media @smDevice {
+   		grid-column: 1;
+   	}
+   	h4 a {
+   		color: @darkColor;
+   	}
+   	h4 a:hover {
+   		color: @redColor;
+   	}
+   	p {
+   		font-size: 15px;
+   	}
+   	p:last-child {
+   		margin-bottom: 0;
+   	}
+   }
+   .oneBlogBlock:nth-child(4) {
+   	grid-row: ~'1/4';
+   	grid-column: ~'3/4';
+   	.oneBlogImage {
+    		float: none;
+    		width: 100%;
+    		height: 100%;
+    		display: flex;
+    		flex-wrap: wrap;
+    		justify-content: flex-end;
+    		flex-direction: column;
+    		margin-right: 0;
+   		background-color: rgba(0, 0, 0, 0.2);
+   		background-blend-mode:color;
+   		background-size: auto 100%;
+   		background-repeat: no-repeat;
+   		background-position: center;
+   		transition: background-size 0.3s;
+   		@media @smDevice {
+   			margin:0;
+   			min-height: 400px;
+   			background-size: cover;
+   			background-position: center top;
+   		}
+   		@media @xsDevice {
+   			min-height: 400px;
+   		}
+    	}
+    	.oneBlogImage:hover {
+    		background-size: auto 110%;
+    		@media @smDevice {
+    			background-size: cover;
+    		}
+    		p {
+    			text-decoration: underline;
+    		}
+    	}
+    	h4 {
+    		padding-left: 20px;
+    		padding-right: 20px;
+    		color:@whiteColor;
+    	}
+    	p {
+    		padding-left: 20px;
+    		padding-right: 20px;
+    		color: @whiteColor;
+    	}
+    	p:last-child {
+    		padding-bottom: 20px;
+    	}
+    	@media @smDevice {
+    		grid-row: initial;
+   		grid-column: 1;
+    	}
+   }
+   .oneBlogImage {
+   	float: left;
+   	width: 47.5%;
+   	margin-right: 27px;
+   	position: relative;
+   	display: block;
+   	@media @smDevice {
+   		margin-right: 15px;
+   	}
+   	@media @xsDevice {
+   		float: none;
+   		margin: 0 0 15px 0;
+   		width: 100%;
+   	}
+   	.blogDate {
+   		bottom: 20px;;
+   		top: inherit;
+   	}
+   }
+   .oneBlogImage:hover {
+   	text-decoration: none;
+   	opacity: 1;
+   }
+   .oneBlogImage img {
+   	transition: opacity 0.3s;
+   	width: 100%;
+   }
+   .oneBlogImage:hover img {
+   	opacity: .5;
+   }
+   .blogDate {
+   	background: @redColor;
+   	color: @whiteColor;
+   	position: absolute;
+   	top: 20px;
+   	bottom: inherit;
+   	left: 20px;
+   	text-align: center;
+   	padding: 5px;
+   	text-transform: uppercase;
+   	font-size: 12px;
+   	z-index: 1;
+   	span {
+   		display: block;
+   	}
+   	.blogDateDay {
+   		font-family: 'Bebas Neue', sans-serif;
+   		font-size: 50px;
+   		line-height: 42px;
+   	}
+   	.blogDateMonth {
+   		line-height: 10px;   		
+   	}
+   }
+}
+
+/*----MembersSec----*/
+.MembersSecGrid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+   grid-auto-rows: auto;
+	grid-gap: 27px;
+   @media @smDevice {
+   	grid-template-columns: 1fr;
+   }
+   @media @xsDevice {
+   	grid-gap: 35px;
+   }
+}
+.oneMember {
+	text-align: center;
+	@media @smDevice {
+		text-align: left;
+	}
+	@media @xsDevice {
+		text-align: center;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
+	h4 {
+		color: @redColor;
+	}
+	.oneMemberImage {
+		margin-bottom: 40px;
+   	height: 407px;
+   	overflow: hidden;
+   	position: relative;
+   	img {
+	    	height: 100%;
+	    	position: absolute;
+	    	left: 0;
+	    	transition: left 0.3s ease-out;
+	    	max-width: initial;
+	    	@media @smDevice {
+   			max-width: 100%;
+   			position: relative;
+   			height: auto;
+   			transition: none;
+   			width: 100%;
+   		}
+	    	@media @xsDevice {
+	    	}
+   	}
+   	@media @lgDevice {
+   		height: 315px;
+   	}
+   	@media @mdDevice {
+   		height: 355px;
+   	}
+   	@media @smDevice {
+   		height: auto;
+   		float: left;
+   		width: 50%;
+   		margin-right: 27px;
+   		margin-bottom: 0;
+   	}
+   	@media @xsDevice {
+   		margin-bottom: 30px;
+   		float: none;
+   		width: 100%;
+   	}
+	}
+	.oneMemberImage:hover {
+		img {
+			left:-50%;
+			@media @smDevice {
+				left: 0;
+			}
+		}
+	}
+}
+
+/*----GallerySec----*/
+.gallerySec {
+	grid-gap: 0;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 350px auto;
+	@media @lgDevice {
+		grid-template-rows: 260px 1fr 1fr;
+	}
+	@media @xsDevice {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+		grid-auto-rows: minmax(200px, auto);
+	}
+	.oneGalleryPic {
+		overflow: hidden;
+		a {
+			display: block;
+			height: 100%;
+			img {
+				object-fit: cover;
+			   width: 100%;
+			   object-position: center;
+			   height: 100%;
+			   transition: all .3s;
+			}
+		}
+		a:hover {
+			img {
+				transform: scale(1.1);
+			}
+		}
+	}
+	.oneGalleryPic:first-child {
+   	grid-column: ~'1/3';
+   	@media @xsDevice {
+   		grid-column: unset;
+   		grid-row: unset;
+   	}
+	}
+	.oneGalleryPic:nth-child(2) {
+   	grid-column: ~'3/5';
+   	@media @xsDevice {
+   		grid-column: unset;
+   		grid-row: unset;
+   	}
+	}
+	.oneGalleryPic:nth-child(3) {
+   	grid-row: ~'2/4';
+   	@media @xsDevice {
+   		grid-row: unset;
+   		grid-column: ~'1/3';
+   	}
+	}
+	.oneGalleryPic:nth-child(4) {
+   	grid-row: ~'2/4';
+   	display: flex;
+   	align-items: flex-end;
+   	h2 {
+   		padding: 30px 27px;
+   	}
+   	@media @lgDevice {
+   		grid-column: ~'1/3';
+   		grid-row: ~'2/3';
+   		align-items: center;
+   	}
+   	@media @xsDevice {
+   		grid-row:  ~'1/3';
+   		grid-column: ~'1/3';
+   		h2 {
+   			padding: 84px 15px 0 15px;
+   			margin-bottom: 20px;
+	   	}
+   	}
+	}
+	.oneGalleryPic:nth-child(5) {
+		@media @xsDevice {
+			grid-column: ~'1/3';
+		}
+	}
+	.oneGalleryPic:last-child {
+   	grid-row: ~'2/4';
+   	grid-column: ~'4/5';
+   	@media @xsDevice {
+   		grid-row: unset;
+   			grid-column: unset;
+   	}
+	}
+}
+
+/*----utpSec----*/
+.utpSecGrid {
+	&:extend(.MembersSecGrid);
+}
+.oneUtp {
+	background: @whiteColor;
+	padding: 50px 25px 25px;
+	text-align: center;
+	position: relative;
+	p {
+		margin-bottom: 0;
+		margin-top: 2em;
+	}
+	&::before {
+		width: 90px;
+		height: 90px;
+		display: block;
+		margin: 0 auto 35px auto;
+		transition: .3s ease-out;
+	}
+	&:hover {
+		.price {
+			color: @redColor;
+		}
+	}
+	&:hover::before {
+		transform: scale(1.15);
+	}
+	h4 {
+		color: @redColor;
+	}
+	.button {
+		padding: 8px 0;
+		width: 75%;
+		margin: 0 auto; 
+	}
+	.price {
+		font-family: 'Bebas Neue', sans-serif;
+		display: inline-block;
+		margin: 25px auto;
+		font-size: 4.2em;
+		line-height: 1em;
+		&::before {
+			content: '$';
+		}
+	}
+	&:nth-child(1)::before {
+		content: url(../img/lamp.svg);
+	}
+	&:nth-child(2)::before {
+		content: url(../img/cart.svg);
+	}
+	&:nth-child(3)::before {
+		content: url(../img/pic.svg);
+	}
+}
+
+
+/*----addressSec----*/
+.addressSec {
+	position: relative;
+	.addressSecBgimage {
+		min-height: 100%;
+   	width: 100%;
+   	position: absolute;
+   	z-index: -1;
+   	@media @mdDevice {
+   		opacity: 0;
+   		left: -99999999px;
+   	}
+   	@media @smDevice {
+   		opacity: 1;
+    		left: 0;
+    		position: relative;
+    		height: 300px;
+   	}
+		.lBgimage {
+			width: 44%;
+			@media @smDevice {
+				width: 0;
+			}
+		}
+		.rBgimage {
+			background-image: url(../img/addrbg.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 56%;
+			@media @smDevice {
+				width: 100%;
+			}
+		}
+	}
+	.addressSecAddress {
+		font-style: normal;
+		h2 {
+			width: 70%;
+			@media @lgDevice {
+				width: 95%;
+			}
+			@media @mdDevice {
+				width: 100%;
+			}
+		}
+		.addressSecAddressUl {
+			margin-top: 80px;
+			li {
+				padding-left: 82px;
+				&:not(:last-child) {
+					margin-bottom: 40px;
+				}
+				position: relative;
+				@media @mdDevice {
+					float: left;
+					min-height: 120px;
+					width: calc(50% - 100px);
+					&:nth-child(even) {
+						margin-left: 18px;
+					}
+				}
+				@media @smDevice {
+					float: none;
+					width: auto;
+					min-height:auto;
+					&:nth-child(even) {
+						margin-left: 0;
+					}
+				}
+				&::before {
+					width: 54px;
+					height: 54px;
+					background-repeat: no-repeat;
+					background-size: cover;
+					position: absolute;
+					left: 0;
+					top: -20px;
+					content: '';
+				}
+				a {
+					display: block;
+					color: @darkColor;
+					&:hover {
+						color: @redColor;
+					}
+				}
+				h4 {
+					color: @redColor;
+					font-size: 2em;
+				}
+				p {
+					margin:0;
+				}
+			}
+			.addressLi::before {
+				background-image: url(../img/map.svg);
+			}
+			.callusLi::before {
+				background-image: url(../img/phone.svg);
+			}
+			.emailLi::before {
+				background-image: url(../img/email.svg);
+			}
+			.webLi::before {
+				background-image: url(../img/web.svg);
+			}
+		}
+	}
 }
