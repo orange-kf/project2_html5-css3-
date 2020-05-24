@@ -42,9 +42,6 @@ html {
 	font: normal 16px 'Open Sans', sans-serif; 
 	line-height: 24px;
 	word-wrap: break-word;
-	-ms-hyphens: auto;
-	-webkit-hyphens: auto;
-	hyphens: auto;
 }
 
 body.siteGrid {
@@ -66,13 +63,18 @@ img {
 h1,
 h2,
 h3,
-h4 {
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
 	font-weight: normal;
 	color: @darkColor;
 	font-family: 'Bebas Neue', sans-serif;
 }
 
-h1 {
+h1,
+.h1 {
 	font-size:@h1FontSize; 
 	line-height: @h1Lh; 
 	margin: @Marg0;
@@ -81,7 +83,8 @@ h1 {
   	}
 }
 
-h2 {
+h2,
+.h2 {
 	font-size:@h2FontSize; 
 	line-height: @h2Lh;
 	margin: @Marg0;
@@ -95,7 +98,8 @@ h2 span {
 	color: @redColor;
 }
 
-h3 {
+h3,
+.h3 {
 	font-size:@h3FontSize; 
 	line-height: @h3Lh;
 	margin: @Marg0;
@@ -104,7 +108,8 @@ h3 {
   	}
 }
 
-h4 {
+h4,
+.h4 {
 	font-size:@h4FontSize; 
 	line-height: @h4Lh;
 	margin: @Marg0;
@@ -373,8 +378,8 @@ ol {
 				color: @redColor;
 				transition: color 0.3s;
 			} 
-			a:active::after
-			a:focus::after, {
+			a:active::after,
+			a:focus::after {
 				content: none;
 			}
 			a:hover::after,
@@ -467,23 +472,87 @@ ol {
 
 /*----bigSlideSec----*/
 .bigSlideSec {
-	min-height: 890px;
+	height: 100vh;
 	margin-top: -204px;
+	width: 100%;
 	color: @whiteColor;
-	background: url(../img/aboutBg.jpg) center no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
+	position: relative;
+	padding-bottom: 11px;
+	z-index: 0;
+	background: black;
 	@media @smDevice {
 		margin-top: -135px;
 		align-items: flex-start;
-		min-height: 600px;
+		min-height: 800px;
+		height: 100%;
 		padding-bottom: 50px;
 	}
-	@media @xsDevice {
-		min-height: auto;
+	.slider {
+		overflow: hidden;
+		height: 100vh;
 	}
-	h1 {
-		color: @whiteColor;
+	.sliderSlides {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: 0;
+		&.firstSlide {
+			animation: slide ease-out 15s infinite;
+			@keyframes slide {
+				0% {opacity: 1; z-index: 1}
+				26.68% { opacity: 1; z-index: 1;}
+				33.35% { opacity: 0; z-index: 0;}
+				93.38% {opacity:0; z-index: 0;}
+				100% {opacity:1; z-index: 1;}
+			}
+		}
+		&.secondSlide {
+			animation: slidetwo ease-out 15s infinite;
+			@keyframes slidetwo {
+				0% {opacity:0; z-index: 0;}
+				26.68% {opacity:0; z-index: 0;}
+				33.35% {opacity:1; z-index: 1;}
+				60.03% { opacity: 1; z-index: 1;}
+				66.7% {opacity:0; z-index: 0;}
+				100% {opacity:0; z-index: 0}
+			}
+		}
+		&.thirdSlide {
+			animation: slidethree ease-out 15s infinite;
+			@keyframes slidethree {
+				0% {opacity:0; z-index: 0;}
+				60.03% { opacity: 0; z-index: 0}
+				66.7% {opacity:1; z-index: 1;}
+				93.38% {opacity: 1; z-index: 1}
+				100% {opacity:0; z-index: 0}
+			}
+		}
+		.container {
+			@media @lgDevice {
+   			width: calc(@lgDeviceMax - 30px);
+  			}
+			@media @mdDevice {
+		   	width: calc(@mdDeviceMax - 30px);
+		  	}
+			@media @smDevice {
+		   	width: calc(@smDeviceMax - 30px);
+		  	}
+		}
+		h1 {
+			color: @whiteColor;
+		}
+		canvas {
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: -1;
+		}
 	}
 }
 .bigSlideSecCont {
@@ -568,6 +637,30 @@ ol {
 /*----AboutAgency----*/
 .aboutAgency {
 	position: relative;
+	&.AnimateFade {
+		.oneAboutAgencyText {
+			animation-name: aboutAgencyMove;
+			animation-duration: .5s;
+			opacity: 0;
+			animation-fill-mode: forwards;
+			@keyframes aboutAgencyMove {
+				from   {top: 100px; opacity: 0;} 
+				to {top: 0; opacity: 1;} 
+			}
+			&:nth-child(1) {
+				animation-delay: 0.5s;
+			} 
+			&:nth-child(2) {
+				animation-delay: 1.2s;
+			} 
+			&:nth-child(3) {
+				animation-delay: 1.9s;
+			}  
+			&:nth-child(4) {
+				animation-delay: 2.6s;
+			} 
+		}
+	}
 	.leftSecBlock {
 		padding: 84px 50px 84px 0;
 		width: 26%;
@@ -630,7 +723,7 @@ ol {
 		}
 	}
 	.oneAboutAgencyText {
-		position: relative;
+		position: relative; 
 		.oneAboutAgencyTitle {
 			width: 300px;
 			padding: 11px 0;
@@ -782,6 +875,16 @@ ol {
 }
 
 /*----servicesSec----*/
+.specialServ .AnimateFade {
+	.specialServGrid {
+		animation: servMove 1s cubic-bezier(0, 0.1, 0.7, 1.3) .7s forwards;
+		opacity: 0;
+		@keyframes servMove {
+			from {transform: scale(0); opacity: 0;} 
+			to {transform: scale(1);  opacity: 1;} 
+		}
+	}
+}
 .specialServGrid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -799,43 +902,64 @@ ol {
    	text-align: center;
    	display: block;
    	color: @darkColor;
-   	transition: transform 0.3s ease-out;
+   	transition: transform .3s ease-out;
+   	height: 325px;
+   	position: relative;
+		overflow: hidden;
+   	&::after {
+   	 	opacity: 0;
+   	 	transition: opacity .3s ease-out;
+   	 	content: '';
+			width: 102%;
+			height: 100%;
+   	 	display: block;    
+			position: absolute;
+			top: 0;    
+			left: 0; 	
+			z-index: -1;
+   	 	background: linear-gradient(45deg, #fb5c00, #ff150d);
+   	}
+   	&:hover::after {
+			opacity: 1;	
+   	} 
    	.oneServCont {
    		padding: 130px 25px 30px 25px;
    		position: relative;
-   	}   	
-   	.oneServCont::before {
-   		width: 54px;
-   		height: 54px;
-   		position: absolute;
-   		top: 45px;
-   		left: 0;
-   		margin-left: calc(50% - 27px);
-   		content: '';
-   		background-position: center;
-   		background-repeat: no-repeat;
-   		background-size: cover;
-   	}
-   	.achievs::before {
-   		background-image: url(../img/achievs.png);
-   	}
-   	.designer::before {
-   		background-image: url(../img/designer.png);
-   	}
-   	.perfect::before {
-   		background-image: url(../img/perfect.png);
-   	}
-   	.perfect2::before {
-   		background-image: url(../img/perfect2.png);
-   	}
-   	.achievs2::before {
-   		background-image: url(../img/achievs2.png);
-   	}
-   	.achievs3::before {
-   		background-image: url(../img/achievs3.png);
-   	}
-   	p {
-   		margin-top: 5px;
+   		transition: padding .3s ease-out;
+   		&::before {
+	   		width: 54px;
+	   		height: 54px;
+	   		position: absolute;
+	   		top: 45px;
+	   		left: 0;
+	   		margin-left: calc(50% - 27px);
+	   		content: '';
+	   		background-position: center;
+	   		background-repeat: no-repeat;
+	   		background-size: cover;
+	   		transition: transform .3s ease-out;
+	   	}
+	   	&.achievs::before {
+	   		background-image: url(../img/achievs.png);
+	   	}
+	   	&.designer::before {
+	   		background-image: url(../img/designer.png);
+	   	}
+	   	&.perfect::before {
+	   		background-image: url(../img/perfect.png);
+	   	}
+	   	&.perfect2::before {
+	   		background-image: url(../img/perfect2.png);
+	   	}
+	   	&.achievs2::before {
+	   		background-image: url(../img/achievs2.png);
+	   	}
+	   	&.achievs3::before {
+	   		background-image: url(../img/achievs3.png);
+	   	}
+	   	p {
+	   		margin-top: 5px;
+	   	}
    	}
    }
    .oneServ:hover {
@@ -843,13 +967,30 @@ ol {
    	-webkit-transform: scale(1.07);
  		-moz-transform: scale(1.07);
  		-o-transform: scale(1.07);
-       color: @redColor;
-       @media @xsDevice {
-       	-webkit-transform: none;
-	 		-moz-transform: none;
-	 		-o-transform: none;
-       }
-   }
+      color: @whiteColor;
+   	@media @xsDevice {
+   		-webkit-transform: none;
+		 	-moz-transform: none;
+		 	-o-transform: none;
+   	    color: @redColor;
+   	}
+   	h4 {
+   		color: @whiteColor;
+   		@media @xsDevice {
+   	   	color: @redColor;
+   		}
+   	}
+   	.oneServCont {
+   		padding-top: 40px;
+   		font-size: 18px;
+   		p {
+   			margin-top: 20px;
+   		}
+   		&:before {
+   			transform: scale3d(0, 0, 1);
+   		}
+   	}
+	}
 }
 
 /*----blogSec----*/
@@ -871,6 +1012,7 @@ ol {
    	@media @smDevice {
    		grid-column: 1;
    	}
+   	h4 {overflow: hidden;}
    	h4 a {
    		color: @darkColor;
    	}
@@ -879,6 +1021,7 @@ ol {
    	}
    	p {
    		font-size: 15px;
+   		overflow: hidden;
    	}
    	p:last-child {
    		margin-bottom: 0;
@@ -996,6 +1139,9 @@ ol {
 }
 
 /*----MembersSec----*/
+.MembersSec {
+	overflow: hidden;
+}
 .MembersSecGrid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -1010,8 +1156,12 @@ ol {
 }
 .oneMember {
 	text-align: center;
+	padding: 0 10px 10px 10px;
+	transition: box-shadow ease-out 0.5s, background ease-out 0.5s;
+	background: transparent;
 	@media @smDevice {
 		text-align: left;
+		padding: 10px;
 	}
 	@media @xsDevice {
 		text-align: center;
@@ -1022,11 +1172,19 @@ ol {
 	h4 {
 		color: @redColor;
 	}
+	&:hover {
+		background: white;
+		-webkit-box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.5);
+		-moz-box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.5);
+		box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.5);
+	}
 	.oneMemberImage {
 		margin-bottom: 40px;
    	height: 407px;
    	overflow: hidden;
    	position: relative;
+   	width: calc(100% + 20px);
+    	margin-left: -10px;
    	img {
 	    	height: 100%;
 	    	position: absolute;
@@ -1040,9 +1198,10 @@ ol {
    			transition: none;
    			width: 100%;
    		}
-	    	@media @xsDevice {
-	    	}
-   	}
+	   }
+	   &+figcaption {
+	   	overflow: hidden;
+	   }
    	@media @lgDevice {
    		height: 315px;
    	}
@@ -1055,6 +1214,7 @@ ol {
    		width: 50%;
    		margin-right: 27px;
    		margin-bottom: 0;
+   		margin-left: 0;
    	}
    	@media @xsDevice {
    		margin-bottom: 30px;
@@ -1087,20 +1247,42 @@ ol {
 	}
 	.oneGalleryPic {
 		overflow: hidden;
-		a {
-			display: block;
+		display: block;
+		perspective: 1000;
+		div {
 			height: 100%;
+			position: relative;
+			transition: transform 1s ease-out;
+ 			transform-style: preserve-3d;
 			img {
 				object-fit: cover;
 			   width: 100%;
 			   object-position: center;
 			   height: 100%;
-			   transition: all .3s;
+			   z-index: 2;
+			   backface-visibility: hidden;
+			}
+			.hiddenGalleryBlock {
+				transform: rotateY(180deg);
+				backface-visibility: hidden;
+				display: flex;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(45deg, #fb5c00, #ff150d);
+				color: @whiteColor;
+				top: 0;
+				left: 0;
+				align-items: center;
+				span {
+					display: block;
+					padding: 10px 20px;
+				}
 			}
 		}
-		a:hover {
-			img {
-				transform: scale(1.1);
+		&:hover {
+			div {
+				transform: rotateY(180deg);
 			}
 		}
 	}
@@ -1217,11 +1399,33 @@ ol {
 		content: url(../img/pic.svg);
 	}
 }
+.utpSecGrid {
+	&.AnimateFade {
+		.oneUtp {
+			animation: utpMove ease-out 0.5s forwards;
+		   opacity: 0;
+		   @keyframes utpMove {
+		   	from {left:100px; opacity: 0;} 
+				to {left:0;  opacity: 1;} 
+		   }
+		}
+		.oneUtp:nth-child(1) {
+			animation-delay: 1.2s;
+		}
+		.oneUtp:nth-child(2) {
+			animation-delay: 1.9s;
+		}
+		.oneUtp:nth-child(3) {
+			animation-delay: 2.6s;
+		}
+	}
+}
 
 
 /*----addressSec----*/
 .addressSec {
 	position: relative;
+	overflow: hidden;
 	.addressSecBgimage {
 		min-height: 100%;
    	width: 100%;
@@ -1251,6 +1455,30 @@ ol {
 			@media @smDevice {
 				width: 100%;
 			}
+		}
+	}
+	&.AnimateFade {
+		.addressSecAddressUl > li {
+			animation-name: addressMove;
+			animation-duration: .5s;
+			opacity: 0;
+			animation-fill-mode: forwards;
+			@keyframes addressMove {
+				from {top: 100px; opacity: 0;} 
+				to {top: 0; opacity: 1;} 
+			}
+			&:nth-child(1) {
+				animation-delay: 1.2s;
+			} 
+			&:nth-child(2) {
+				animation-delay: 1.9s;
+			} 
+			&:nth-child(3) {
+				animation-delay: 2.6s;
+			}  
+			&:nth-child(4) {
+				animation-delay: 3.3s;
+			} 
 		}
 	}
 	.addressSecAddress {
@@ -1305,7 +1533,7 @@ ol {
 						color: @redColor;
 					}
 				}
-				h4 {
+				.h4 {
 					color: @redColor;
 					font-size: 2em;
 				}
