@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Arrow Design</title>
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/fadeBlock.css" rel="stylesheet">
 </head>
 <body class="siteGrid">
 	<header class="topPageHeader">
@@ -31,18 +32,46 @@
 	</header>
 	<main class="SiteCont">
 		<section class="bigSlideSec dFlex itemsCenter">
-			<div class="container">
-				<div class="bigSlideSecCont">
-					<h1>Welcome to The <span>Award Winning</span> Agency</h1>
-					<p class="bigSlideSubTitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut.</p>
-					<div class="bigSlidButtBlock">
-						<a class="button" href="#">Read more</a>
-						<a class="button whiteBorderButton" href="#">Read more</a>
+			<div class="sliderSlides firstSlide">
+				<canvas id="canvasImageOne"></canvas>
+				<div class="container">
+					<div class="bigSlideSecCont">
+						<h1>Welcome to The <span>Award Winning</span> Agency</h1>
+						<p class="bigSlideSubTitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut.</p>
+						<div class="bigSlidButtBlock">
+							<a class="button" href="#">Read more</a>
+							<a class="button whiteBorderButton" href="#">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sliderSlides secondSlide">
+				<canvas id="canvasImageTwo"></canvas>
+				<div class="container">
+					<div class="bigSlideSecCont">
+						<h1>Test <span>Slider</span> Information</h1>
+						<p class="bigSlideSubTitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, unde.</p>
+						<div class="bigSlidButtBlock">
+							<a class="button" href="#">Read more</a>
+							<a class="button whiteBorderButton" href="#">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sliderSlides thirdSlide">
+				<canvas id="canvasImageThree"></canvas>
+				<div class="container">
+					<div class="bigSlideSecCont">
+						<h1>Third <span>Slide</span> Content</h1>
+						<p class="bigSlideSubTitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit delectus et laudantium sed neque voluptates.</p>
+						<div class="bigSlidButtBlock">
+							<a class="button whiteBorderButton" href="#">Read more</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<section class="aboutAgency">
+		<section class="aboutAgency fadeIn">
 			<div class="container dFlex itemsEnd mdFlexWrap">
 				<div class="leftSecBlock">
 					<h2>About <span>Creative</span> Agecny</h2>
@@ -100,7 +129,7 @@
 			</div>
 		</section>
 		<section class="secPad lightBgColor specialServ">
-			<div class="container dFlex itemsEnd mdFlexWrap">
+			<div class="container dFlex itemsEnd mdFlexWrap fadeBottom">
 				<div class="leftSecBlock">
 					<h2>Our <span>Special</span> Services</h2>
 				</div>
@@ -146,13 +175,13 @@
 				</div>
 			</div>
 		</section>
-		<section class="blogSec secPad">
+		<section class="blogSec secPad fadeIn">
 			<div class="container dFlex itemsEnd mdFlexWrap">
 				<div class="leftSecBlock">
 					<h2>Latest <span>Design</span> Blog</h2>
 				</div>
 				<div class="rightSecBlock">
-					<div class="blogSecGrid">
+					<div class="blogSecGrid fadeLeft">
 						<article class="oneBlogBlock">
 							<a class="oneBlogImage clearfix" href="#">
 								<span class="blogDate">
@@ -206,7 +235,7 @@
 					<h2>Creative <span>Team</span> Members</h2>
 				</div>
 				<div class="rightSecBlock">
-					<div class="MembersSecGrid">
+					<div class="MembersSecGrid fadeRight">
 						<figure class="oneMember">
 							<div class="oneMemberImage">
 								<img src="img/member01.jpg" alt="Designer Name">
@@ -241,48 +270,78 @@
 				</div>
 			</div>
 		</section>
-		<section class="gallerySec dGrid">
-			<div class="oneGalleryPic">
-				<a href="#">
+		<section class="gallerySec dGrid fadeIn">
+			<a class="oneGalleryPic" href="#">
+				<div>
 					<img src="img/gal01.jpg" alt="gallery Image">
-				</a>
-			</div>
-			<div class="oneGalleryPic">
-				<a href="#">
+					<span class="hiddenGalleryBlock">
+						<span>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, minima.
+						</span>
+					</span>
+				</div>
+			</a>
+			<a class="oneGalleryPic" href="#">
+				<div>
 					<img src="img/gal02.jpg" alt="gallery Image">
-				</a>
-			</div>
-			<div class="oneGalleryPic">
-				<a href="#">
+					<span class="hiddenGalleryBlock">
+						<span>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, minima.
+						</span>
+					</span>
+				</div>
+			</a>
+			<a class="oneGalleryPic" href="#">
+				<div>
 					<img src="img/gal03.jpg" alt="gallery Image">
-				</a>
-			</div>
+					<span class="hiddenGalleryBlock">
+						<span>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, minima.
+						</span>
+					</span>
+				</div>
+			</a>
 			<div class="oneGalleryPic">
 				<h2>Our <span>Portfolio</span> Gallery</h2>
 			</div>
-			<div class="oneGalleryPic">
-				<a href="#">
+			<a class="oneGalleryPic" href="#">
+				<div>
 					<img src="img/gal04.jpg" alt="gallery Image">
-				</a>
-			</div>
-			<div class="oneGalleryPic">
-				<a href="#">
+					<span class="hiddenGalleryBlock">
+						<span>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, minima.
+						</span>
+					</span>
+				</div>
+			</a>
+			<a class="oneGalleryPic" href="#">
+				<div>
 					<img src="img/gal06.jpg" alt="gallery Image">
-				</a>
-			</div>
-			<div class="oneGalleryPic">
-				<a href="#">
+					<span class="hiddenGalleryBlock">
+						<span>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, minima.
+						</span>
+					</span>
+				</div>
+			</a>
+			<a class="oneGalleryPic" href="#">
+				<div>
 					<img src="img/gal05.jpg" alt="gallery Image">
-				</a>
-			</div>
+					<span class="hiddenGalleryBlock">
+						<span>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, minima.
+						</span>
+					</span>
+				</div>
+			</a>
 		</section>
-		<section class="utpSec lightBgColor secPad">
+		<section class="utpSec lightBgColor secPad fadeIn">
 			<div class="container dFlex itemsEnd mdFlexWrap">
 				<div class="leftSecBlock">
 					<h2>Our <span>Designs</span> Package</h2>
 				</div>
 				<div class="rightSecBlock">
-					<div class="utpSecGrid">
+					<div class="utpSecGrid fadeLeft">
 						<div class="oneUtp">
 							<h3>Designer Name</h3>
 							<h4>Graphic Designer</h4>
@@ -308,31 +367,31 @@
 				</div>
 			</div>
 		</section>
-		<section class="addressSec">
+		<section class="addressSec fadeBottom">
 			<div class="addressSecBgimage dFlex">
 				<div class="lBgimage"></div>
 				<div class="rBgimage"></div>				
 			</div>
 			<div class="container dFlex itemsEnd mdFlexWrap">
 				<div class="leftSecBlock secPad">
+					<h2>How <span>Find Us</span></h2>
 					<address class="addressSecAddress">
-						<h2>How <span>Find Us</span></h2>
 						<ul class="addressSecAddressUl clearfix">
 							<li class="addressLi">
-								<h4>Address</h4>
+								<p class="h4">Address</p>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
 							</li>
 							<li class="callusLi">
-								<h4>Call us</h4>
+								<p class="h4">Call us</p>
 								<a href="tel:+12345678900">+123 4567 8900</a>
 								<a href="tel:+12345678900">+123 4567 8900</a>
 							</li>
 							<li class="emailLi">
-								<h4>Email</h4>
+								<p class="h4">Email</p>
 								<a href="mailto:free@psdfreebies.com">free@psdfreebies.com</a>
 							</li>
 							<li class="webLi">
-								<h4>Website</h4>
+								<p class="h4">Website</p>
 								<a href="https://psdfreebies.com/" target="_blank">www.psdfreebies.com</a>
 							</li>
 						</ul>
@@ -344,5 +403,84 @@
 	<footer class="textCenter">
 		 Copyright © 2017. Design by PSDFreebies.com
 	</footer>
+	<script src="js/fadeBlock.js"></script>
+	<script src="js/granim.js"></script>
+	<script>
+		var firstImage = new Granim({
+    		element: '#canvasImageOne',
+    		direction: 'custom',
+    		customDirection: {
+    			x0: '0%',
+  				y0: '0%',
+  				x1: '50%',
+  				y1: '100%'
+    		},
+    		isPausedWhenNotInView: true,
+    		image : {
+        		source: 'img/aboutBg.jpg',
+        		blendingMode: 'color',
+        		stretchMode: ['stretch-if-smaller', 'stretch-if-smaller']
+    		},
+    		states : {
+        		"default-state": {
+            	gradients: [
+                	['#ee7752', '#e73c7e'],
+                	['#23a6d5', '#23d5ab']
+            	],
+            	transitionSpeed: 7000
+        		}
+    		}
+		});
+		var secondImage = new Granim({
+    		element: '#canvasImageTwo',
+    		direction: 'custom',
+    		customDirection: {
+    			x0: '0%',
+  				y0: '0%',
+  				x1: '50%',
+  				y1: '100%'
+    		},
+    		isPausedWhenNotInView: true,
+    		image : {
+        		source: 'img/slide2.jpg',
+        		blendingMode: 'color',
+        		stretchMode: ['stretch-if-smaller', 'stretch-if-smaller']
+    		},
+    		states : {
+        		"default-state": {
+            	gradients: [
+                	['#ee7752', '#e73c7e'],
+                	['#23a6d5', '#23d5ab']
+            	],
+            	transitionSpeed: 7000
+        		}
+    		}
+		});
+		var secondImage = new Granim({
+    		element: '#canvasImageThree',
+    		direction: 'custom',
+    		customDirection: {
+    			x0: '0%',
+  				y0: '0%',
+  				x1: '50%',
+  				y1: '100%'
+    		},
+    		isPausedWhenNotInView: true,
+    		image : {
+        		source: 'img/slide3.jpg',
+        		blendingMode: 'color',
+        		stretchMode: ['stretch-if-smaller', 'stretch-if-smaller']
+    		},
+    		states : {
+        		"default-state": {
+            	gradients: [
+                	['#ee7752', '#e73c7e'],
+                	['#23a6d5', '#23d5ab']
+            	],
+            	transitionSpeed: 7000
+        		}
+    		}
+		});
+	</script>
 </body>
 </html>
