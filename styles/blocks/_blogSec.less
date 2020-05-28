@@ -1,0 +1,152 @@
+.blogSecGrid {
+  display: grid;
+	grid-gap: 27px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  @media @smDevice {
+   	grid-template-columns: 1fr;
+   	grid-auto-rows: auto;
+  }
+  @media @xsDevice {
+    grid-gap: 35px;
+  }
+}
+ 
+.oneBlogBlock {
+  &_placeInGrid {
+   	grid-column: ~'1/3';
+    @media @smDevice {
+      grid-column: 1;
+    }
+  }
+ 	position: relative;
+ 	
+ 	h4 {overflow: hidden;}
+ 	h4 a {
+ 		color: @darkColor;
+ 	}
+ 	h4 a:hover {
+ 		color: @redColor;
+ 	}
+ 	p {
+ 		font-size: 15px;
+ 		overflow: hidden;
+ 	}
+ 	p:last-child {
+	margin-bottom: 0;
+ 	}
+
+  &_lastBlock {
+    grid-row: ~'1/4';
+ 	  grid-column: ~'3/4';
+    @media @smDevice {
+      grid-row: initial;
+      grid-column: 1;
+    }
+    h4 {
+      padding-left: 20px;
+      padding-right: 20px;
+      color:@whiteColor;
+      }
+    p {
+      padding-left: 20px;
+      padding-right: 20px;
+      color: @whiteColor;
+      &:last-child {
+        padding-bottom: 20px;
+      }
+    }
+    &__blogDate {
+      bottom: 20px;
+      top: inherit;
+    }
+  }
+  &__oneBlogImage {
+    float: left;
+    width: 47.5%;
+    margin-right: 27px;
+    position: relative;
+    display: block;
+    @media @smDevice {
+      margin-right: 15px;
+    }
+    @media @xsDevice {
+      float: none;
+      margin: 0 0 15px 0;
+      width: 100%;
+    }
+    &:hover {
+      text-decoration: none;
+      opacity: 1;
+    }
+    img {
+      transition: opacity 0.3s;
+      width: 100%;
+      &:hover {
+        opacity: .5;
+      }
+    }
+    &_lastBlock {
+      float: none;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      flex-direction: column;
+      margin-right: 0;
+      background-color: rgba(0, 0, 0, 0.2);
+      background-blend-mode:color;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: background-size 0.3s;
+      @media @smDevice {
+        margin:0;
+        min-height: 400px;
+        background-size: cover;
+        background-position: center top;
+      }
+      @media @xsDevice {
+        min-height: 400px;
+      }
+      &:hover {
+        background-size: auto 110%;
+        @media @smDevice {
+          background-size: cover;
+        }
+        p {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &__blogDate {
+    background: @redColor;
+    color: @whiteColor;
+    position: absolute;
+    bottom: 20px;
+    top: inherit;
+    left: 20px;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    z-index: 1;
+    span {
+      display: block;
+    }
+    &_lastBlock {
+      top: 20px;
+      bottom: inherit;
+    }
+    &_blogDateDay {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 50px;
+      line-height: 42px;
+    }
+    &_blogDateMonth {
+      line-height: 10px;      
+    }
+  }
+}

@@ -4,122 +4,104 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Arrow Design</title>
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/fadeBlock.css" rel="stylesheet">
+	<link href="styles/styles.css" rel="stylesheet">
 </head>
 <body class="siteGrid">
 	<header class="topPageHeader">
 		<div class="container clearfix">
 			<div class="siteLogo">
-				<a href="#"><img src="img/siteLogo.png" alt="company Name"></a>
+				<a class="siteLogo__link" href="#"><img src="img/siteLogo.png" alt="company Name"></a>
 			</div>
 			<nav class="mainNav">
-				<input type="checkbox" id="mainNavCheckbox" class="mainNavCheckbox">
-				<label for="mainNavCheckbox" class="mainNavBtn">
-					<div class="mainNavIcon"><span></span></div>
+				<input type="checkbox" id="mainNavCheckbox" class="mainNav__checkbox">
+				<label for="mainNavCheckbox" class="mainNav__btn">
+					<div class="mainNav__icon"><span></span></div>
 				</label>
-				<ul class="mainNavMenu">
-					<li><a class="active" href="#">Home</a></li>
-					<li><a href="#">About us</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Portfolio</a></li>
-					<li><a href="#">Our team</a></li>
-					<li><a href="#">News</a></li>
-					<li><a href="#">Contact</a></li>
+				<ul class="mainNav__menu">
+					<li><a class="mainNav__link mainNav__link_active" href="#">Home</a></li>
+					<li><a class="mainNav__link" href="#">About us</a></li>
+					<li><a class="mainNav__link" href="#">Services</a></li>
+					<li><a class="mainNav__link" href="#">Portfolio</a></li>
+					<li><a class="mainNav__link" href="#">Our team</a></li>
+					<li><a class="mainNav__link" href="#">News</a></li>
+					<li><a class="mainNav__link" href="#">Contact</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
-	<main class="SiteCont">
-		<section class="bigSlideSec dFlex itemsCenter">
-			<div class="sliderSlides firstSlide">
-				<canvas id="canvasImageOne"></canvas>
-				<div class="container">
-					<div class="bigSlideSecCont">
+	<main>
+		<section class="topSliderSec topSliderSec_mainPage">
+			<div class="topSliderSec__topSlider dFlex itemsCenter">
+				<div class="topSliderSec__textContentWrap">
+					<div class="topSliderSec__textContent">
 						<h1>Welcome to The <span>Award Winning</span> Agency</h1>
-						<p class="bigSlideSubTitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut.</p>
-						<div class="bigSlidButtBlock">
+						<p class="topSliderSec__subTitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut.</p>
+						<div class="topSliderSec__buttBlock dFlex flexRow xsflexCol">
 							<a class="button" href="#">Read more</a>
-							<a class="button whiteBorderButton" href="#">Read more</a>
+							<a class="button topSliderSec__button_whiteBorderButton" href="#">Read more</a>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="sliderSlides secondSlide">
-				<canvas id="canvasImageTwo"></canvas>
-				<div class="container">
-					<div class="bigSlideSecCont">
-						<h1>Test <span>Slider</span> Information</h1>
-						<p class="bigSlideSubTitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, unde.</p>
-						<div class="bigSlidButtBlock">
-							<a class="button" href="#">Read more</a>
-							<a class="button whiteBorderButton" href="#">Read more</a>
-						</div>
-					</div>
+				<div class="topSliderSec__slides topSliderSec__slides_firstSlide">
+					<canvas id="canvasImageOne"></canvas>
 				</div>
-			</div>
-			<div class="sliderSlides thirdSlide">
-				<canvas id="canvasImageThree"></canvas>
-				<div class="container">
-					<div class="bigSlideSecCont">
-						<h1>Third <span>Slide</span> Content</h1>
-						<p class="bigSlideSubTitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit delectus et laudantium sed neque voluptates.</p>
-						<div class="bigSlidButtBlock">
-							<a class="button whiteBorderButton" href="#">Read more</a>
-						</div>
-					</div>
+				<div class="topSliderSec__slides topSliderSec__slides_secondSlide">
+					<canvas id="canvasImageTwo"></canvas>
+				</div>
+				<div class="topSliderSec__slides topSliderSec__slides_thirdSlide">
+					<canvas id="canvasImageThree"></canvas>
 				</div>
 			</div>
 		</section>
 		<section class="aboutAgency fadeIn">
 			<div class="container dFlex itemsEnd mdFlexWrap">
-				<div class="leftSecBlock">
+				<div class="leftSecBlock aboutAgency__leftSecBlock">
 					<h2>About <span>Creative</span> Agecny</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
 				</div>
-				<div class="rightSecBlock">
-					<div class="aboutAgencyBg"></div>
-					<div class="aboutAgencyTextCont">
-						<div class="oneAboutAgencyText dFlex itemsStart  xsFlexWrap">
-							<div class="oneAboutAgencyTitle">
+				<div class="rightSecBlock aboutAgency__rightSecBlock">
+					<div class="aboutAgency__aboutAgencyBg"></div>
+					<div class="aboutAgency__aboutAgencyTextCont">
+						<div class="aboutAgency__oneAboutAgencyText dFlex itemsStart xsFlexWrap">
+							<div class="aboutAgency__oneAboutAgencyTitle">
 								<h3>Working hours</h3>
 								<h4>Designer Name</h4>
 							</div>
-							<div class="oneAboutAgencyDesc">
-								<div class="oneAboutAgencyDescText">
+							<div class="aboutAgency__oneAboutAgencyDesc">
+								<div class="aboutAgency__oneAboutAgencyDescText">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
 								</div>
 							</div>
 						</div>
-						<div class="oneAboutAgencyText dFlex itemsStart  xsFlexWrap">
-							<div class="oneAboutAgencyTitle">
+						<div class="aboutAgency__oneAboutAgencyText dFlex itemsStart  xsFlexWrap">
+							<div class="aboutAgency__oneAboutAgencyTitle">
 								<h3>Working hours</h3>
 								<h4>Designer Name</h4>
 							</div>
-							<div class="oneAboutAgencyDesc">
-								<div class="oneAboutAgencyDescText">
+							<div class="aboutAgency__oneAboutAgencyDesc">
+								<div class="aboutAgency__oneAboutAgencyDescText">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
 								</div>
 							</div>
 						</div>
-						<div class="oneAboutAgencyText dFlex itemsStart  xsFlexWrap">
-							<div class="oneAboutAgencyTitle">
+						<div class="aboutAgency__oneAboutAgencyText dFlex itemsStart  xsFlexWrap">
+							<div class="aboutAgency__oneAboutAgencyTitle">
 								<h3>Working hours</h3>
 								<h4>Designer Name</h4>
 							</div>
-							<div class="oneAboutAgencyDesc">
-								<div class="oneAboutAgencyDescText">
+							<div class="aboutAgency__oneAboutAgencyDesc">
+								<div class="aboutAgency__oneAboutAgencyDescText">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
 								</div>
 							</div>
 						</div>
-						<div class="oneAboutAgencyText dFlex itemsStart  xsFlexWrap">
-							<div class="oneAboutAgencyTitle">
+						<div class="aboutAgency__oneAboutAgencyText dFlex itemsStart  xsFlexWrap">
+							<div class="aboutAgency__oneAboutAgencyTitle">
 								<h3>Working hours</h3>
 								<h4>Designer Name</h4>
 							</div>
-							<div class="oneAboutAgencyDesc">
-								<div class="oneAboutAgencyDescText">
+							<div class="aboutAgency__oneAboutAgencyDesc">
+								<div class="aboutAgency__oneAboutAgencyDescText">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
 								</div>
 							</div>
@@ -134,39 +116,39 @@
 					<h2>Our <span>Special</span> Services</h2>
 				</div>
 				<div class="rightSecBlock">
-					<div class="specialServGrid">
+					<div class="specialServ__specialServGrid">
 						<a class="oneServ" href="#">
-								<div class="oneServCont achievs">
+								<div class="oneServ__oneServCont oneServ__oneServCont_achievs">
 									<h4 class="redColor textCenter">Achievs</h4>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
 								</div>
 						</a>
 						<a class="oneServ" href="#">
-							<div class="oneServCont designer">
+							<div class="oneServ__oneServCont oneServ__oneServCont_designer">
 								<h4 class="redColor textCenter">Designer</h4>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut </p>
 							</div>
 						</a>
 						<a class="oneServ" href="#">
-							<div class="oneServCont perfect">
+							<div class="oneServ__oneServCont oneServ__oneServCont_perfect">
 								<h4 class="redColor textCenter">Perfect design</h4>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
 							</div>
 						</a>
 						<a class="oneServ" href="#">
-							<div class="oneServCont perfect2">
+							<div class="oneServ__oneServCont oneServ__oneServCont_perfect2">
 								<h4 class="redColor textCenter">Perfect design</h4>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,  </p>
 							</div>
 						</a>
 						<a class="oneServ" href="#">
-							<div class="oneServCont achievs2">
+							<div class="oneServ__oneServCont oneServ__oneServCont_achievs2">
 								<h4 class="redColor textCenter">Achievs</h4>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
 							</div>
 						</a>
 						<a class="oneServ" href="#">
-							<div class="oneServCont achievs3">
+							<div class="oneServ__oneServCont oneServ__oneServCont_achievs3">
 								<h4 class="redColor textCenter">Achievs</h4>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
 							</div>
@@ -175,52 +157,52 @@
 				</div>
 			</div>
 		</section>
-		<section class="blogSec secPad fadeIn">
+		<section class="secPad fadeIn">
 			<div class="container dFlex itemsEnd mdFlexWrap">
 				<div class="leftSecBlock">
 					<h2>Latest <span>Design</span> Blog</h2>
 				</div>
 				<div class="rightSecBlock">
 					<div class="blogSecGrid fadeLeft">
-						<article class="oneBlogBlock">
-							<a class="oneBlogImage clearfix" href="#">
-								<span class="blogDate">
-									<span class="blogDateDay">24</span>
-									<span class="blogDateMonth">dec, 18</span>
+						<article class="oneBlogBlock oneBlogBlock_placeInGrid">
+							<a class="oneBlogBlock__oneBlogImage clearfix" href="#">
+								<span class="oneBlogBlock__blogDate">
+									<span class="oneBlogBlock__blogDate_blogDateDay">24</span>
+									<span class="oneBlogBlock__blogDate_blogDateMonth">dec, 18</span>
 								</span>
 								<img src="img/blog01.jpg" alt="Blog image 01">
 							</a>
 							<h4><a href="#">Designed and built with care</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
 						</article>
-						<article class="oneBlogBlock">
-							<a class="oneBlogImage clearfix" href="#">
-								<span class="blogDate">
-									<span class="blogDateDay">24</span>
-									<span class="blogDateMonth">dec, 18</span>
+						<article class="oneBlogBlock oneBlogBlock_placeInGrid">
+							<a class="oneBlogBlock__oneBlogImage clearfix" href="#">
+								<span class="oneBlogBlock__blogDate">
+									<span class="oneBlogBlock__blogDate_blogDateDay">24</span>
+									<span class="oneBlogBlock__blogDate_blogDateMonth">dec, 18</span>
 								</span>
 								<img src="img/blog02.jpg" alt="Blog image 02">
 							</a>
 							<h4><a href="#">Designed and built with care</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
 						</article>
-						<article class="oneBlogBlock">
-							<a class="oneBlogImage clearfix" href="#">
-								<span class="blogDate">
-									<span class="blogDateDay">24</span>
-									<span class="blogDateMonth">dec, 18</span>
+						<article class="oneBlogBlock oneBlogBlock_placeInGrid">
+							<a class="oneBlogBlock__oneBlogImage clearfix" href="#">
+								<span class="oneBlogBlock__blogDate">
+									<span class="oneBlogBlock__blogDate_blogDateDay">24</span>
+									<span class="oneBlogBlock__blogDate_blogDateMonth">dec, 18</span>
 								</span>
 								<img src="img/blog03.jpg" alt="Blog image 03">
 							</a>
 							<h4><a href="#">Designed and built with care</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
 						</article>
-						<article class="oneBlogBlock">
-							<span class="blogDate">
-								<span class="blogDateDay">24</span>
-								<span class="blogDateMonth">dec, 18</span>
+						<article class="oneBlogBlock oneBlogBlock_lastBlock">
+							<span class="oneBlogBlock__blogDate oneBlogBlock__blogDate_lastBlock">
+								<span class="oneBlogBlock__blogDate_blogDateDay">24</span>
+								<span class="oneBlogBlock__blogDate_blogDateMonth">dec, 18</span>
 							</span>
-							<a class="oneBlogImage clearfix" href="#" style=" background-image: url('img/blog04.jpg');">
+							<a class="oneBlogBlock__oneBlogImage oneBlogBlock__oneBlogImage_lastBlock clearfix" href="#" style="background-image: url('img/blog04.jpg');">
 								<h4>Designed and built with care</h4>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
 							</a>
@@ -229,7 +211,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="MembersSec lightBgColor secPad">
+		<!--<section class="MembersSec lightBgColor secPad">
 			<div class="container dFlex itemsEnd mdFlexWrap">
 				<div class="leftSecBlock">
 					<h2>Creative <span>Team</span> Members</h2>
@@ -398,89 +380,14 @@
 					</address>
 				</div>
 			</div>
-		</section>
+		</section>-->
 	</main>
 	<footer class="textCenter">
 		 Copyright © 2017. Design by PSDFreebies.com
 	</footer>
 	<script src="js/fadeBlock.js"></script>
 	<script src="js/granim.js"></script>
-	<script>
-		var firstImage = new Granim({
-    		element: '#canvasImageOne',
-    		direction: 'custom',
-    		customDirection: {
-    			x0: '0%',
-  				y0: '0%',
-  				x1: '50%',
-  				y1: '100%'
-    		},
-    		isPausedWhenNotInView: true,
-    		image : {
-        		source: 'img/aboutBg.jpg',
-        		blendingMode: 'color',
-        		stretchMode: ['stretch-if-smaller', 'stretch-if-smaller']
-    		},
-    		states : {
-        		"default-state": {
-            	gradients: [
-                	['#ee7752', '#e73c7e'],
-                	['#23a6d5', '#23d5ab']
-            	],
-            	transitionSpeed: 7000
-        		}
-    		}
-		});
-		var secondImage = new Granim({
-    		element: '#canvasImageTwo',
-    		direction: 'custom',
-    		customDirection: {
-    			x0: '0%',
-  				y0: '0%',
-  				x1: '50%',
-  				y1: '100%'
-    		},
-    		isPausedWhenNotInView: true,
-    		image : {
-        		source: 'img/slide2.jpg',
-        		blendingMode: 'color',
-        		stretchMode: ['stretch-if-smaller', 'stretch-if-smaller']
-    		},
-    		states : {
-        		"default-state": {
-            	gradients: [
-                	['#ee7752', '#e73c7e'],
-                	['#23a6d5', '#23d5ab']
-            	],
-            	transitionSpeed: 7000
-        		}
-    		}
-		});
-		var secondImage = new Granim({
-    		element: '#canvasImageThree',
-    		direction: 'custom',
-    		customDirection: {
-    			x0: '0%',
-  				y0: '0%',
-  				x1: '50%',
-  				y1: '100%'
-    		},
-    		isPausedWhenNotInView: true,
-    		image : {
-        		source: 'img/slide3.jpg',
-        		blendingMode: 'color',
-        		stretchMode: ['stretch-if-smaller', 'stretch-if-smaller']
-    		},
-    		states : {
-        		"default-state": {
-            	gradients: [
-                	['#ee7752', '#e73c7e'],
-                	['#23a6d5', '#23d5ab']
-            	],
-            	transitionSpeed: 7000
-        		}
-    		}
-		});
-	</script>
+	<script src="js/script.js"></script>
+
 </body>
 </html>
