@@ -1,0 +1,35 @@
+.bgAdressImage {
+	min-height: 100%;
+   width: 100%;
+   @media @smDevice {
+   	height: 300px;
+   }
+   &_addressSec {
+   	position: absolute;
+   	z-index: -1; 
+   	@media @mdDevice { 
+   		opacity: 0;
+   		left: -99999999px;
+   	} 	
+   	@media @smDevice {
+   		opacity: 1;
+   		left: 0;
+   		position: relative;
+   	}
+   }
+	&__lBgImage {
+		width: 44%;
+		@media @smDevice {
+			width: 0;
+		}
+	}
+	&__rBgImage {
+		background-image: url(../img/addrbg.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 56%;
+		@media @smDevice {
+			width: 100%;
+		}
+	}
+}

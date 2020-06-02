@@ -1,0 +1,52 @@
+.oneUtp {
+	background: @whiteColor;
+	padding: 50px 25px 25px;
+	text-align: center;
+	position: relative;
+	&__desc {
+		margin-bottom: 0;
+		margin-top: 2em;
+	}
+	&::before {
+		width: 90px;
+		height: 90px;
+		display: block;
+		margin: 0 auto 35px auto;
+		transition: .3s ease-out;
+	}
+	&:hover {
+		.price {
+			color: @redColor;
+		}
+	}
+	&:hover::before {
+		transform: scale(1.15);
+	}
+	&__job {
+		color: @redColor;
+	}
+	&__price {
+		font-family: 'Bebas Neue', sans-serif;
+		display: inline-block;
+		margin: 25px auto;
+		font-size: 4.2em;
+		line-height: 1em;
+		&::before {
+			content: '$';
+		}
+	}
+	.button_utp {
+		padding: 8px 0;
+		width: 75%;
+		margin: 0 auto; 
+	}
+	&:nth-child(1)::before {
+		content: url(../img/lamp.svg);
+	}
+	&:nth-child(2)::before {
+		content: url(../img/cart.svg);
+	}
+	&:nth-child(3)::before {
+		content: url(../img/pic.svg);
+	}
+}

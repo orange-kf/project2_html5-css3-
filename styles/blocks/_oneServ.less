@@ -1,0 +1,98 @@
+.oneServ {
+    background: @whiteColor;
+  	text-align: center;
+  	display: block;
+  	color: @darkColor;
+  	transition: transform .3s ease-out;
+  	height: 325px;
+  	position: relative;
+    overflow: hidden;
+  	&::after {
+  	 	opacity: 0;
+  	 	transition: opacity .3s ease-out;
+  	 	content: '';
+		  width: 102%;
+		  height: 100%;
+  	 	display: block;    
+		  position: absolute;
+		  top: 0;    
+		  left: 0; 	
+		  z-index: -1;
+  	 	background: linear-gradient(45deg, #fb5c00, #ff150d);
+  	}
+  	&:hover::after {
+		opacity: 1;	
+  	} 
+  	&__oneServCont {
+   	padding: 130px 25px 30px 25px;
+   	position: relative;
+   	&::before {
+	  	width: 54px;
+	  	height: 54px;
+	  	position: absolute;
+	  	top: 45px;
+	  	left: 0;
+	  	margin-left: ~"calc(50% - 27px)";
+	  	content: '';
+	  	background-position: center;
+	  	background-repeat: no-repeat;
+	  	background-size: cover;
+	  	transition: transform .3s ease-out;
+	  }
+	  &_achievs::before {
+	  	background-image: url(../img/achievs.png);
+	  }
+	  &_designer::before {
+	  	background-image: url(../img/designer.png);
+	  }
+	  &_perfect::before {
+	  background-image: url(../img/perfect.png);
+	  }
+	  &_perfect2::before {
+	  	background-image: url(../img/perfect2.png);
+	  }
+	  &_achievs2::before {
+	  	background-image: url(../img/achievs2.png);
+	  }
+	  &_achievs3::before {
+	  	background-image: url(../img/achievs3.png);
+	  }
+	  p {
+	  	margin-top: 5px;
+	  }
+  }
+  &:hover {
+  	text-decoration: none;
+  	transform: scale(1.07);
+    color: @whiteColor;
+   	@media @xsDevice {
+  		transform: none;
+      color: @redColor;
+   	}
+   	h4 {
+   		color: @whiteColor;
+   		@media @xsDevice {
+   	   	color: @redColor;
+   		}
+   	}
+   	.oneServ__oneServCont {
+   		animation: servPad .3s cubic-bezier(.22, .81, .01, .99) .2s forwards;
+   		@keyframes servPad {
+   			0% {padding-top: 130px;}
+   			100% {padding-top: 40px; font-size: 18px;}
+   		}
+   		p {
+   			margin-top: 20px;
+   		}
+   		&:before {
+   			transform: scale3d(0, 0, 1);
+   		}
+      @media @xsDevice {
+        animation:none;
+        p {
+          margin-top: 5px;
+        }
+      }
+   	}
+	}
+}

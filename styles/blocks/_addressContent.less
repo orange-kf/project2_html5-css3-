@@ -1,0 +1,76 @@
+.addressContent {
+	font-style: normal;
+	h2 {
+		width: 70%;
+		@media @lgDevice {
+			width: 95%;
+		}
+		@media @mdDevice {
+			width: 100%;
+		}
+	}
+	&__ul {
+		li {
+			padding-left: 82px;
+			&:not(:last-child) {
+				margin-bottom: 40px;
+			}
+			position: relative;
+			@media @mdDevice {
+				float: left;
+				min-height: 120px;
+				width: ~"calc(50% - 100px)";
+				&:nth-child(even) {
+					margin-left: 18px;
+				}
+			}
+			@media @smDevice {
+				float: none;
+				width: auto;
+				min-height:auto;
+				&:nth-child(even) {
+					margin-left: 0;
+				}
+			}
+			&::before {
+				width: 54px;
+				height: 54px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: absolute;
+				left: 0;
+				top: -20px;
+				content: '';
+			}
+			a {
+				display: block;
+				color: @darkColor;
+				&:hover {
+					color: @redColor;
+				}
+			}
+			.h4 {
+				color: @redColor;
+				font-size: 2em;
+			}
+			p {
+				margin:0;
+			}
+		}
+	}
+	&_addressLi::before {
+		background-image: url(../img/map.svg);
+	}
+	&_callusLi::before {
+		background-image: url(../img/phone.svg);
+	}
+	&_emailLi::before {
+		background-image: url(../img/email.svg);
+	}
+	&_webLi::before {
+		background-image: url(../img/web.svg);
+	}
+	&_addressSec {
+		margin-top: 80px;
+	}
+}
