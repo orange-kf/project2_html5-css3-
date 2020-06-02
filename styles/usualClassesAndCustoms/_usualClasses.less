@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital@0;1&display=swap');
+html {
+	margin:0; 
+	padding:0; 
+	height: 100%; 
+	color: @color; 
+	font: normal 16px 'Open Sans', sans-serif; 
+	line-height: 24px;
+	word-wrap: break-word;
+}
+
+body.siteGrid {
+	min-height: 100%;
+	margin:0; 
+	padding:0;
+	display: grid;
+   grid-template-rows: 198px minmax(300px, 1fr) 142px;
+   @media @smDevice {
+   	grid-template-rows: 135px minmax(300px, 1fr) 142px;
+	}
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
+	font-weight: normal;
+	color: @darkColor;
+	font-family: 'Bebas Neue', sans-serif;
+}
+
+h1,
+.h1 {
+	font-size:@h1FontSize; 
+	line-height: @h1Lh; 
+	margin: @Marg0;
+	@media @smDevice {
+		font-size: @h1SmFontSize;
+  	}
+}
+
+h2,
+.h2 {
+	font-size:@h2FontSize; 
+	line-height: @h2Lh;
+	margin: @Marg0;
+	@media @smDevice {
+		font-size: @h2SmFontSize;
+  	}
+}
+
+h1 span,
+h2 span {
+	color: @redColor;
+}
+
+h3,
+.h3 {
+	font-size:@h3FontSize; 
+	line-height: @h3Lh;
+	margin: @Marg0;
+	@media @smDevice {
+		font-size: @h3SmFontSize;
+  	}
+}
+
+h4,
+.h4 {
+	font-size:@h4FontSize; 
+	line-height: @h4Lh;
+	margin: @Marg0;
+	@media @smDevice {
+		font-size: @h4SmFontSize;
+  	}
+}
+
+*:focus {outline: none;}
+
+a {
+	text-decoration: none;
+	color: @redColor;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: @darkColor;
+}
+
+a:active {
+	color: @aDarkColor;
+}
+
+footer {
+	background: @lightColor;
+	line-height: 142px;
+	@media @xsDevice {
+		font-size: @smallFontSize;
+  	}
+}
+
+header,
+main,
+footer,
+article,
+figure {
+	display: block;
+	margin: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ol {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	margin: 0 auto;  
+	max-width: 100%;
+	width: 1170px;
+	padding: 0 15px;
+	
+	@media @lgDevice {
+   	width: @lgDeviceMax;
+  	}
+	@media @mdDevice {
+   	width: @mdDeviceMax;
+  	}
+	@media @smDevice {
+   	width: @smDeviceMax;
+  	}
+	@media @xsDevice {
+		width: @xsDeviceMax;
+  	}
+}
+
+.clearfix::after {
+	content:''; 
+	display:table; 
+	clear: both;
+}
+
+.textCenter {
+	text-align: center;
+}
+
+.dGrid {
+	display: grid;
+}
+
+.dFlex {
+	display: flex;
+}
+
+.flexRow {
+	flex-direction: row;
+}
+
+.flexCol {
+	flex-direction: column;
+}
+
+.smflexCol {
+	@media @smDevice {
+   	flex-direction: column;
+  	}
+}
+
+.xsflexCol {
+	@media @xsDevice {
+   	flex-direction: column;
+  	}
+}
+
+.flexWrap {
+	flex-wrap: wrap;
+}
+
+.flexNoWrap {
+	flex-wrap: nowrap;
+}
+
+.mdFlexWrap {
+	@media @mdDevice {
+   	flex-wrap: wrap;
+  	}
+}
+
+.smFlexWrap {
+	@media @smDevice {
+   	flex-wrap: wrap;
+  	}
+}
+
+.xsFlexWrap {
+	@media @xsDevice {
+   	flex-wrap: wrap;
+  	}
+}
+
+.itemsStart {
+	align-items: flex-start;
+}
+
+.itemsEnd {
+	align-items: flex-end;
+}
+
+.itemsCenter {
+	align-items: center;
+}
+
+.contBetween {
+	justify-content: space-between;
+}
+
+.contCenter {
+	justify-content: center;
+}
+
+.mr0a {
+	margin: 0 auto;
+}
+
+.smMr0 {
+	@media @smDevice {
+   	margin:0;
+  	}
+}
+
+.darkBgColor {
+	background-color: @darkColor;
+}
+
+.lightBgColor {
+	background-color: @lightColor;
+}
+
+.redBgColor {
+	background-color: @redColor;
+}
+
+.redColor {
+	color: @redColor;
+}
+
+.secPad {
+	padding: 84px 0;
+	@media @smDevice {
+   	padding: 84px 0 40px 0;
+  	}
+}
+
+.button {
+	display: block;
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: 'Bebas Neue', sans-serif;
+	color: @whiteColor;
+	padding: 12px 50px;
+	background: @redColor;
+	border: 4px solid @redColor;
+	transition: background 0.3s;
+}
+
+.button:hover {
+	text-decoration: none;
+	background: transparent;
+	color: @redColor;
+}
+
+.button:active {
+	background: @redColor;
+	color: @aDarkColor;
+}
+
+.leftSecBlock {
+	width: 26%;
+	padding-right: 50px;
+	@media @mdDevice {
+		width: 100%;
+		padding-right: 0;
+	}
+	h2 {
+		margin-bottom: -10px;
+		@media @smDevice {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.rightSecBlock {
+	width: 74%;
+	@media @mdDevice {
+		width: 100%;
+		position: relative;
+		margin-top: 50px;
+	}
+	@media @xsDevice {
+		margin-top: 30px;
+	}
+}
+
+.fadeIn{
+  opacity:0;
+  transition:opacity 1s ease-out;
+}
+
+.fadeRight{
+  opacity:0;
+  transform: translateX(20%);
+  -webkit-transform:translateX(120%);
+  transition:all .5s ease;
+}
+
+
+.fadeLeft{
+  opacity:0;
+  transform: translateX(-20%);
+  -webkit-transform:translateX(-20%);
+  transition:all .5s ease-out;
+}
+
+.fadeTop{
+  opacity:0;
+  transform: translateY(-20%);
+  -webkit-transform:translateY(-20%);
+  transition:all .5s ease;
+}
+
+.fadeBottom{
+  opacity:0;
+  transform: translateY(20%);
+  -webkit-transform:translateY(20%);
+  transition:all .5s ease;
+}
+
+.AnimateFadeIn{
+  opacity:1;
+}
+
+.AnimateFade{
+  opacity:1;
+  transform: translateX(0);
+  -webkit-transform:translateX(0);
+}

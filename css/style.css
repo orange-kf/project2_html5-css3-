@@ -1053,7 +1053,6 @@ ol {
 .specialServGrid .oneServ .oneServCont {
   padding: 130px 25px 30px 25px;
   position: relative;
-  transition: padding 0.3s ease-out;
 }
 .specialServGrid .oneServ .oneServCont::before {
   width: 54px;
@@ -1091,6 +1090,7 @@ ol {
 }
 .specialServGrid .oneServ:hover {
   text-decoration: none;
+  transform: scale(1.07);
   -webkit-transform: scale(1.07);
   -moz-transform: scale(1.07);
   -o-transform: scale(1.07);
@@ -1098,6 +1098,7 @@ ol {
 }
 @media screen and (max-width: 575px) {
   .specialServGrid .oneServ:hover {
+    transform: none;
     -webkit-transform: none;
     -moz-transform: none;
     -o-transform: none;
@@ -1113,8 +1114,16 @@ ol {
   }
 }
 .specialServGrid .oneServ:hover .oneServCont {
-  padding-top: 40px;
-  font-size: 18px;
+  animation: servPad 0.3s cubic-bezier(0.22, 0.81, 0.01, 0.99) 0.2s forwards;
+}
+@keyframes servPad {
+  0% {
+    padding-top: 130px;
+  }
+  100% {
+    padding-top: 40px;
+    font-size: 18px;
+  }
 }
 .specialServGrid .oneServ:hover .oneServCont p {
   margin-top: 20px;

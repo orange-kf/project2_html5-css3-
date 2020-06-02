@@ -925,7 +925,6 @@ ol {
    	.oneServCont {
    		padding: 130px 25px 30px 25px;
    		position: relative;
-   		transition: padding .3s ease-out;
    		&::before {
 	   		width: 54px;
 	   		height: 54px;
@@ -964,11 +963,13 @@ ol {
    }
    .oneServ:hover {
    	text-decoration: none;
+   	transform: scale(1.07);
    	-webkit-transform: scale(1.07);
  		-moz-transform: scale(1.07);
  		-o-transform: scale(1.07);
       color: @whiteColor;
    	@media @xsDevice {
+   		transform: none;
    		-webkit-transform: none;
 		 	-moz-transform: none;
 		 	-o-transform: none;
@@ -981,8 +982,11 @@ ol {
    		}
    	}
    	.oneServCont {
-   		padding-top: 40px;
-   		font-size: 18px;
+   		animation: servPad .3s cubic-bezier(.22, .81, .01, .99) .2s forwards;
+   		@keyframes servPad {
+   			0% {padding-top: 130px;}
+   			100% {padding-top: 40px; font-size: 18px;}
+   		}
    		p {
    			margin-top: 20px;
    		}
