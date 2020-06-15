@@ -6,7 +6,6 @@ html {
 	color: @color; 
 	font: normal 16px 'Open Sans', sans-serif; 
 	line-height: 24px;
-	word-wrap: break-word;
 }
 
 body.siteGrid {
@@ -15,6 +14,7 @@ body.siteGrid {
 	padding:0;
 	display: grid;
    grid-template-rows: 198px minmax(300px, 1fr) 142px;
+   grid-template-columns: 100%;
    @media @smDevice {
    	grid-template-rows: 135px minmax(300px, 1fr) 142px;
 	}
@@ -127,11 +127,16 @@ ol {
 	padding: 0;
 }
 
+section {
+	overflow: hidden;
+}
+
 .container {
 	margin: 0 auto;  
 	max-width: 100%;
 	width: 1170px;
 	padding: 0 15px;
+	box-sizing: border-box;
 	
 	@media @lgDevice {
    	width: @lgDeviceMax;

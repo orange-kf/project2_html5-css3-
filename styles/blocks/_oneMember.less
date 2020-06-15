@@ -1,0 +1,82 @@
+.oneMember {
+	text-align: center;
+	padding: 0 10px 10px 10px;
+	transition: box-shadow ease-out 0.5s, background ease-out 0.5s;
+	background: transparent;
+	overflow: hidden;
+	@media @smDevice {
+		text-align: left;
+		padding: 10px;
+	}
+	@media @xsDevice {
+		text-align: center;
+	}
+	&:hover {
+		background: white;
+		-webkit-box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.5);
+		-moz-box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.5);
+		box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.5);
+	}
+	h4 {
+		color: @redColor;
+	}
+	&__oneMemberImage {
+		height: 407px;
+   	overflow: hidden;
+   	position: relative;
+   	width: calc(100% + 20px);
+   	img {
+	    	height: 100%;
+	    	position: absolute;
+	    	left: 0;
+	    	transition: left 0.3s ease-out;
+	    	max-width: initial;
+	    	@media @smDevice {
+   			max-width: 100%;
+   			position: relative;
+   			height: auto;
+   			transition: none;
+   			width: 100%;
+   		}
+	   }
+	   &_membersSec {
+	   	margin-bottom: 40px;
+	   	margin-left: -10px;
+	   	@media @smDevice {
+	   		float: left;
+	   		margin: 0 27px 0 0;
+	   	}
+	   	@media @xsDevice {
+	   		margin-bottom: 30px;
+	   		float: none;
+	   	}
+	   }
+	   &+figcaption {
+	   	overflow: hidden;
+	   	p {
+	   		margin-bottom: 0;
+	   	}
+	   }
+   	@media @lgDevice {
+   		height: 315px;
+   	}
+   	@media @mdDevice {
+   		height: 355px;
+   	}
+   	@media @smDevice {
+   		height: auto;
+   		width: 50%;
+   	}
+   	@media @xsDevice {
+   		width: 100%;
+   	}
+	}
+	&:hover {
+		img {
+			left:-50%;
+			@media @smDevice {
+				left: 0;
+			}
+		}
+	}
+}
